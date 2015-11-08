@@ -1,0 +1,54 @@
+body {
+ background: lavender;
+}
+
+div {
+ border: dotted thin lightgray;
+ padding: 3px;
+ margin: 5px;
+}
+
+
+div#LogOutput {
+ margin: 5px;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ height: 1rem;
+ width: 1rem;
+ border: thin dashed red;
+ font-size:0.8em;
+ overflow: hidden;
+}
+
+div#LogOutput:hover {
+ height:90%;
+ right: 0;
+ width: auto;
+ overflow: scroll;
+ background: white;
+}
+
+div#site {
+background: white;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ max-width: 50rem;
+}
+
+
+
+div#LogOutput ul {
+ margin:0;
+ padding: 0 0 0 20px;
+}
+
+div#LogOutput h3 {
+ margin: 1px 0 1px 0;
+}
+
+div#LogOutput pre {
+ margin: 1px;
+ border: thin dotted lightblue;
+}
