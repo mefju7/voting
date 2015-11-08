@@ -5,7 +5,7 @@ $Scripts[]='inc/vote.js';
 // getting description of motion
 if(!isset($motion))
 	$motion=0;
-	$stmt=$dbh->prepare('select title, description from motion where poll=? and motion=?;');
+	$stmt=$dbh->prepare('select title, description, motionOrElection from motion where poll=? and motion=?;');
 	$stmt->execute(array($poll,$motion));
 	$res=$stmt->fetch();
 	if(!$res) {
@@ -15,9 +15,13 @@ if(!isset($motion))
 
 $motionTitle=$res['title'];
 $motionDescription=$res['description'];
+$mOE=$res['motionOrElection'];
 $sections[]='views/showMotion.php';
 
-
+if($mOE>0)
+ include 'inc/servElection.php';
+else
+ include 'inc/servMotion.php';
 
  $stmt=$dbh->prepare('select motion,title from motion where poll=?;');
  $stmt->execute(array($poll));

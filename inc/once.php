@@ -3,9 +3,13 @@ log2web(__FILE__);
 
 $requestVariables = array(
 		'a' => 'admin',
+		'e' => 'candidate',
 		'm' => 'motion',
+		'o' => 'option',
 		'p' => 'poll',
 		'v' => 'voter',
+		'r' => 'rank',
+		's' => 'state',
 		'av' => 'addVoters',
 		'md' => 'newMotionDescription',
 		'mp' => 'newMotionProposals',
@@ -19,8 +23,6 @@ $requestVariables = array(
 log2web('opening database');
 try {
 	$dbh=new PDO('sqlite:data/voting.db');
-	$stmt=$dbh->prepare('PRAGMA foreign_keys = ON;');
-	$stmt->execute();
 }catch(PDOException $e) {
 	log2web($e->getMessage());
 }

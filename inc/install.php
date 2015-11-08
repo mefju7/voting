@@ -9,17 +9,17 @@ create table if not exists poll (poll char(32) primary key ,
 create table if not exists motion (poll char(32), motion unsigned tinyint, 
   title char(255), motionOrElection unsigned tinyint,   
 	description text, primary key (poll,motion) on conflict replace,
-	foreign key(poll) references poll(poll) on update cascade on delete cascade);
+	foreign key(poll) references poll(poll));
 
 create table if not exists proposal (poll char(32), motion unsigned tinyint, 
 	proposal unsigned tinyint, title varchar(255),
 	primary key(poll, motion, proposal) on conflict replace,
-	foreign key(poll, motion) references motion(poll, motion) on update cascade on delete cascade);
+	foreign key(poll, motion) references motion(poll, motion));
 
 create table if not exists vote(poll char(32), voter char(32), motion unsigned tinyint,
 	vote text, 
 	primary key(poll, voter, motion) on conflict replace,
-	foreign key(poll, motion) references motion(poll, motion) on update cascade on delete cascade);
+	foreign key(poll, motion) references motion(poll, motion));
 
  insert into poll values ("poll","admin","test poll",0,"me@me",0);
  insert into motion values ("poll", 0, "first motion", 0, "you know what...");

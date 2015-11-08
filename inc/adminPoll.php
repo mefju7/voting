@@ -19,7 +19,7 @@ $linkBase .= explode('?',$_SERVER['PHP_SELF'])[0];
 		 if(strlen($v)==0)
 			 continue;
 		 $key=md5(rand().$v.'key');
-		 log2web('added voter '.$v.' with key '.$key);
+		 // log2web('added voter '.$v.' with key '.$key);
 		 $stmt->execute(array($poll,$key));
 		 $voteLink=$linkBase.'?p='.$poll.'&v='.$key;
 		 $msg='<html><body><h3>'.$pollTitle.'</h3>';
