@@ -17,6 +17,21 @@ background: white;
 }
 
 
+table#motion {
+ padding: 10px;
+}
+table#motion, table#motion td, table#motion th {
+border: thin solid darkgreen;
+border-collapse: collapse;
+padding: 5px;
+}
+
+table#motion tr.choice:hover {
+ background-color: lightblue;
+ cursor: pointer;
+}
+
+
 
 div.instruction {
  color: red;
@@ -29,6 +44,11 @@ div.instruction {
 
 div.right {
 	float:right;
+}
+
+div.tinyDate{
+ font: smaller smaller;
+ color: darkred;
 }
 
 
