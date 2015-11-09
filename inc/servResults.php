@@ -150,7 +150,7 @@ function printCalculation($motion){
 		foreach($props as $i => $v)
 			echo '<li>'.$i.'=='.$v.'</li>';
 		echo '</ul></li>';
-		echo '<li> The preferences (Tally) counted:';
+		echo '<li> The preferences (Tally) counted, row wins over column:';
 		print2DArray($prefs,$props);
 		echo '</li>';
 		echo '<li> The equal preferences:';
