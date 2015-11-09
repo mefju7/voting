@@ -11,12 +11,13 @@ function sortCountedVotes($a,$b){
  return ($a[1]<$b[1]?1:-1);
 }
 
-function print2DArray($arr){
+function print2DArray($arr,$names){
 	$rows=count($arr);
 	$cols=count($arr[0]);
 	echo '<table class="math">';
 	for($i=0;$i<$rows;++$i){
 		echo '<tr>';
+		echo '<td>'.$names[$i].'</td>';
 		for($j=0;$j<$cols;++$j){
 		echo '<td>'.$arr[$i][$j].'</td>';
 		}
@@ -150,10 +151,10 @@ function printCalculation($motion){
 			echo '<li>'.$i.'=='.$v.'</li>';
 		echo '</ul></li>';
 		echo '<li> The preferences (Tally) counted:';
-		print2DArray($prefs);
+		print2DArray($prefs,$props);
 		echo '</li>';
 		echo '<li> The equal preferences:';
-		print2DArray($noPrefs);
+		print2DArray($noPrefs,$props);
 		echo '</li>';
 		$pairs=array();
 		for($i=0;$i<$pCnt;++$i)

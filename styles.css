@@ -8,6 +8,16 @@ div {
  margin: 5px;
 }
 
+table.math{
+  border-collapse: collapse;
+  margin: 5px;
+  
+}
+table.math td {
+  border:thin solid lightgray;
+  padding: 2px 4px 2px 4px;
+}
+
 div#site {
 background: white;
  display: block;
