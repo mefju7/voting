@@ -4,6 +4,15 @@ if(!isset($noActionDiv)) echo '<div id="action">';
 ?>
 <fieldset>
 <legend>Vote in motion</legend>
+<div class="instruction">
+Click on the proposal to change its rank to 
+<select name="changeRank2">
+<?php printOptions($opsTable,$nextOps); ?>
+</select>.
+The rank will increase with each click, but you might adjust the value before clicking on a proposal.
+Starting with 0 and clicking on the proposals in your preferred order will arrange them accordingly.
+Rank 0 denotes your preferred proposal.
+</div> 
 <div class="tinyDate">
 <?php date_default_timezone_set('UTC'); echo "vote retrieved at utc=".date("H:i:s"); ?>
 </div>
@@ -15,15 +24,8 @@ if(!isset($noActionDiv)) echo '<div id="action">';
 <?php printVote() ;?>
 </tbody>
 </table>
-<div class="instruction">
-Click on the proposal to change its rank to 
-<select name="changeRank2">
-<?php printOptions($opsTable,$nextOps); ?>
-</select>.
-The rank will increase with each click, but you might adjust the value before clicking on a proposal.
-Starting with 0 and clicking on the proposals in your preferred order will arrange them accordingly.
-Rank 0 denotes your preferred proposal.
-</div> </form>
+
+</form>
 <div class="right">
 <form method="get">
 <input type="hidden" name="p" value="<?php echo $poll;?>" />

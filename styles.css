@@ -3,7 +3,7 @@ body {
 }
 
 div {
- border: dotted thin lightgray;
+ /* border: dotted thin lightgray; */
  padding: 3px;
  margin: 5px;
 }
@@ -45,7 +45,7 @@ table#motion tr.choice:hover {
 
 div.instruction {
  color: red;
- border: thin dashed darkred;
+ /* border: thin dashed darkred; */
 }
 
 .fullwidth {
