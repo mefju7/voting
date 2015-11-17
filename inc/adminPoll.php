@@ -27,10 +27,18 @@ $linkBase .= explode('?',$_SERVER['PHP_SELF'])[0];
 		 $msg.='</body></html>';
 		 // To send HTML mail, the Content-type header must be set
 		 $mailHeaders  = array();
+		 $from = 'postmaster@'.$_SERVER['SERVER_NAME'];
 		 $mailHeaders[]='MIME-Version: 1.0' ;
 		 $mailHeaders[]= 'Content-type: text/html; charset=iso-8859-1';
 		 $mailHeaders[]='X-Mailer: PHP/'.phpversion();
+		 $mailHeaders [] = 'From: ' . $from;
+		 $mailHeaders [] = 'Reply-to: ' . $from;
+		 $mailHeaders [] = 'Disposition-Notification-To: ' . $from;
+		 $mailHeaders [] = 'Return-Receipt-To: ' . $from;
+		 $mailHeaders [] = 'X-Confirm-Reading-To: ' . $from;
+		 $mailHeaders [] = 'Date: ' . date ( 'r' );
 		 mail($v,'you are invited to vote',$msg,implode("\r\n",$mailHeaders));
+		 log2web('sending email to '.$v);
 	 }
 	}
 
